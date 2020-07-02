@@ -38,7 +38,8 @@
                   <td>{{$itinerario->empresa}}</td>
                   <td>{{$itinerario->itinerario}}</td>
                   <td><a href="/itinerarios/{{ $itinerario->id}}/edit" class="btn btn-success">Editar</button>
-                      <a href="/itinerarios/{{ $itinerario->id}}/edit" class="btn btn-danger">Deletar</button>
+                      
+                  <a href="{{route ('itinerarios.destroy-confirm', $itinerario->id) }}"> Excluir </a>
                   </td>
                 </tr>
 

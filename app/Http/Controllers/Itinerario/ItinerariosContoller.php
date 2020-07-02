@@ -89,6 +89,17 @@ class ItinerariosContoller extends Controller
      */
     public function destroy($id)
     {
-        //
+        $itinerario = Itinerario::find($id);
+
+        $itinerario->delete();
+
+        return redirect('itinerarios')->with('statusUpdate', "Itinerario excluido com Sucesso!!!");
+    }
+
+    public function destroyConfirm($id)
+    {
+        $itinerario = Itinerario::find($id);
+
+        return view('itinerario.destroy', ['itinerario'=> $itinerario]);
     }
 }

@@ -104,8 +104,17 @@ class VistoriasContoller extends Controller
      */
     public function destroy($id)
     {
-       // Vistoria::find($id)->delete();
+        $vistoria = Vistoria::find($id);
 
-       // return redirect('vistoria') ;
+        $vistoria->delete();
+
+        return redirect('vistorias')->with('statusUpdate', "Vistoria excluido com Sucesso!!!");
+    }
+
+    public function destroyConfirm($id)
+    {
+        $vistoria = Vistoria::find($id);
+
+        return view('vistoria.destroy', ['vistoria'=> $vistoria]);
     }
 }

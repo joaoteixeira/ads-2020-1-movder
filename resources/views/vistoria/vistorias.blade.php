@@ -40,7 +40,8 @@
                   <td>{{$vistoria->empresa}}</td>
                   <td>{{$vistoria->vencimento}}</td>
                   <td><a href="/vistorias/{{ $vistoria->id}}/edit" class="btn btn-success">Editar</button>
-                      <a href="/vistorias/{{ $vistoria->id}}/edit" class="btn btn-danger">Deletar</button>
+                                          
+                      <a href="{{route ('vistorias.destroy-confirm', $vistoria->id) }}"> Excluir </a>
                   </td>
                   
                 </tr>

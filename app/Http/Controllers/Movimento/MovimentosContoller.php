@@ -88,6 +88,17 @@ class MovimentosContoller extends Controller
      */
     public function destroy($id)
     {
-        //
+        $movimento = Movimento::find($id);
+
+        $movimento->delete();
+
+        return redirect('movimentos')->with('statusUpdate', "Movimento excluido com Sucesso!!!");
+    }
+
+    public function destroyConfirm($id)
+    {
+        $movimento = Movimento::find($id);
+
+        return view('movimento.destroy', ['movimento'=> $movimento]);
     }
 }

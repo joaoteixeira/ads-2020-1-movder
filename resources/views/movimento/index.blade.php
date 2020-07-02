@@ -55,7 +55,8 @@
                               <td>{{$movimento->quant_passageiros}}</td>
                               
                               <td><a href="/movimentos/{{ $movimento->id}}/edit" class="btn btn-success">Editar</button>
-                                  <a href="/movimentos/{{ $movimento->id}}/edit" class="btn btn-danger">Deletar</button>
+
+                                  <a href="{{route ('movimentos.destroy-confirm', $movimento->id) }}"> Excluir </a>
                               </td>
                 </tr>
               @endforeach
