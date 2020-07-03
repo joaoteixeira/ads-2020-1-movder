@@ -21,10 +21,10 @@ class Movimento extends Model
     ];
 
     public function vistorias(){
-        return $this->belongsMany('App\Vistoria');
+        return $this->belongsToMany('App\Vistoria', 'movimentos_vistorias');
     }
 
-    public function itinerarios(){
-        return $this->belongsMany('App\Itinerario');
+    public function itinerario(){
+        return $this->belongsTo('App\Itinerario');
     }
 }

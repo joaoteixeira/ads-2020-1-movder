@@ -22,6 +22,9 @@ class CreateMovimentosTable extends Migration
             $table->time('hora_saida');
             $table->string('quant_passageiros');
             $table->timestamps();
+
+            $table->unsignedInteger('itinerario_id');
+            $table->foreign('itinerario_id')->references('id')->on('itinerarios');
         });
     }
 
