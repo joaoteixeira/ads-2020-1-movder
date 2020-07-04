@@ -8,7 +8,7 @@
 
         <form action="{{ route('movimentos.store') }}" method="post" class="font-weight-bold" class="text-lowercase"> 
             @csrf 
-            <h1>Novo Movimento</h1> 
+            <h1>Novo Movimentos   sskhddh</h1> 
                 
             <div style="width: 150px;" class="form-group">
                 <label for="">data</label>
@@ -35,6 +35,26 @@
                 <input type="text" class="form-control" id="" name="quant_passageiros" class="text-lowercase">
             </div>
             
+            <div class="form-group">
+            <label for="">Data</label>
+            <input class="form-control" type="text" value="{{ date('d/M/Y') }}" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Cliente</label>
+            <select name="cliente" class="form-control">
+                <option>Selecione um cliente</option>
+
+                @foreach($clientes as $cliente)
+                    <option value="{{ $cliente->id }}">{{ $cliente->nome }}</option> 
+                @endforeach
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="">Status da OS</label>
+            <input class="form-control" type="text" value="Aberto" disabled>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Abrir OS</button>
             
 
             <button type="submit" class="btn btn-primary">Salvar</button>

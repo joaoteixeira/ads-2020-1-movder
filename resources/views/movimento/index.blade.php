@@ -54,7 +54,7 @@
                               <td>{{$movimento->hora_saida}}</td>
                               <td>{{$movimento->quant_passageiros}}</td>
                               
-                              <td><a href="/movimentos/{{ $movimento->id}}/edit" class="btn btn-success">Editar</button>
+                              <td><a href="/movimentos/{{ $movimento->id}}/edit" class="btn btn-success">Editar teste</button>
 
                                   <a href="{{route ('movimentos.destroy-confirm', $movimento->id) }}"> Excluir </a>
                               </td>
